@@ -275,10 +275,10 @@ footer p{margin:0 0 4px}
 #code-names,.monte .codes small{color:var(--hero-muted)}
 .monte .motion{color:var(--hero-ink);border-bottom-color:var(--hero-muted)}
 .stage canvas{filter:drop-shadow(0 28px 22px rgba(90,18,32,.25))}
-.monte-grid{margin-top:-15vw}
-@media (min-width:1300px){.monte-grid{margin-top:-190px}}
+.monte-grid{margin-top:-10vw}
+@media (min-width:1300px){.monte-grid{margin-top:-120px}}
 .palette{padding-top:20px}
-.paper-side,.ribbon-side{margin-top:max(200px,15vw);align-self:stretch}
+.paper-side,.ribbon-side{margin-top:max(140px,10vw);align-self:stretch}
 .monte-grid{align-items:stretch}
 .ribbon-side #ribbons{flex:1}
 .paper-side .finish-block{margin-top:auto;padding-top:18px}
@@ -322,7 +322,7 @@ footer p{margin:0 0 4px}
   .hero-info div{grid-template-columns:110px 1fr}
 }
 @media (max-width:360px){.sw-grid{grid-template-columns:repeat(4,22px)}}
-@media (max-width:560px){.stage{max-width:68%}.monte-grid{margin-top:-9vw}}
+@media (max-width:560px){.stage{max-width:68%}.monte-grid{margin-top:0}}
 
 /* celular: o bem-casado acompanha a rolagem enquanto a pessoa escolhe as cores */
 @media (max-width:980px){
