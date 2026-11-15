@@ -41,10 +41,29 @@
       <button aria-pressed="false" data-filter="Clássicos">Clássicos</button>
       <button aria-pressed="false" data-filter="Especiais">Especiais</button>
     </div>
-    <div class="carousel"><div id="products" class="products"></div><span class="drag-cursor" id="drag-cursor" aria-hidden="true">ARRASTE</span></div>
-    <p class="catalog-note">Mínimo de 40 unidades por sabor · valores sujeitos à confirmação.</p>
+    <div id="products" class="catalog"></div>
+    <p class="catalog-note">Mínimo de 40 unidades por sabor · valores sujeitos à confirmação do ateliê.</p>
   </section>
 </main>
+
+<!-- barra do pedido -->
+<div class="cart-bar" id="cart-bar" hidden>
+  <button type="button" class="cart-open" id="cart-open" aria-controls="cart" aria-expanded="false">
+    <span id="cart-count">0 sabores</span><strong id="cart-total-bar">R$ 0,00</strong><span class="cart-cta">Ver pedido ↑</span>
+  </button>
+</div>
+<aside class="cart" id="cart" aria-label="Seu pedido de doces finos" hidden>
+  <div class="cart-head"><h2>Seu pedido</h2><button type="button" class="cart-close" id="cart-close" aria-label="Fechar pedido">×</button></div>
+  <ul class="cart-list" id="cart-list"></ul>
+  <form class="cart-form" id="cart-form" novalidate>
+    <label for="cart-date">Data da retirada</label>
+    <input id="cart-date" type="date" required>
+    <small>Mínimo de 72 h de antecedência · retirada no ateliê</small>
+    <div class="cart-sum"><span>Total estimado</span><strong id="cart-total">R$ 0,00</strong></div>
+    <button class="button" type="submit">Enviar pedido no WhatsApp ↗</button>
+    <p class="cart-note">Você revisa a mensagem antes de enviar. O pedido só é confirmado pelo ateliê, mediante sinal de 50%.</p>
+  </form>
+</aside>
 
 <footer>
   <div class="foot-top">
