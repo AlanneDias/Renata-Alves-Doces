@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Renata Alves — Ateliê de Doces</title>
+<meta name="description" content="Onde a sofisticação encontra o sabor artesanal. Doces finos e bem-celebrados sob encomenda em Campina Grande – PB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand brand-top" href="./" aria-label="Renata Alves, início"><img class="brand-symbol" src="assets/simbolo-vermelho.png" alt="Renata Alves"></a>
+  <nav id="menu" aria-label="Principal">
+    <a href="./" aria-current="page">Início</a>
+    <a href="./#bens">Bens</a>
+    <a href="./#monte">Monte seu bem-casado</a>
+    <a href="doces.html">Doces finos</a>
+    <a href="historia.html">Nossa história</a>
+    <a href="vip.html">Grupo VIP</a>
+    <a href="retiradas.html">Retiradas</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span><b>Menu</b></button>
+</header>
+
+<main class="page-index">
+  <!-- INÍCIO + MONTADOR -->
+  <section id="inicio" class="monte">
+    <h1 class="bg-name"><span>Renata Alves</span></h1>
+    <div class="monte-grid" id="monte">
+      <aside class="palette paper-side">
+        <h2 class="legend">COR DO PAPEL</h2>
+        <div id="papers"></div>
+        <div class="finish-block">
+          <h2 class="legend">ACABAMENTO</h2>
+          <div id="finishes"></div>
+        </div>
+      </aside>
+
+      <div class="center">
+        <div class="stage" id="stage">
+          <canvas id="bem-canvas" role="img" aria-label="Simulação do bem-casado com o papel e a fita escolhidos"></canvas>
+          <p class="no-photo-msg">Não foi possível carregar a foto do bem-casado.</p>
+        </div>
+        <div class="codes" aria-live="polite">
+          <p id="code-main"></p>
+          <p id="code-names"></p>
+          <small>Simulação fotográfica. Cores digitais aproximadas.</small>
+        </div>
+        <button type="button" id="motion-toggle" class="motion" aria-pressed="false">Pausar movimento</button>
+        <a class="to-order" href="#pedido-form">Continuar para o pedido ↓</a>
+      </div>
+
+      <aside class="palette ribbon-side">
+        <h2 class="legend">COR DO LAÇO</h2>
+        <div id="ribbons"></div>
+      </aside>
+    </div>
+
+    <div class="hero-foot">
+      <div class="hero-price">
+        <p class="from">a partir de</p>
+        <p class="amount">R$ 7,00 <span>/ un.</span></p>
+        <p class="hero-desc">Bem-casado artesanal, vestido em papel crepom e fita de cetim nas cores da sua celebração.</p>
+        <a class="pill" href="#pedido-form">Fazer meu pedido</a>
+      </div>
+      <dl class="hero-info">
+        <div><dt>Pedido mínimo</dt><dd>20 unidades por pedido</dd></div>
+        <div><dt>Antecedência</dt><dd>72 horas, conforme agenda</dd></div>
+        <div><dt>Retirada</dt><dd>No ateliê, em Campina Grande – PB</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="order-wrap" id="pedido-form">
+    <form id="config" class="order" novalidate>
+      <fieldset class="flavor-pick">
+        <legend>Escolha o sabor</legend>
+        <div class="sabores" id="flavors" role="radiogroup" aria-label="Sabor"></div>
+      </fieldset>
+      <div class="order-summary" aria-live="polite">
+        <canvas id="mini-bem" width="320" height="320" role="img" aria-label="Seu bem-casado com as cores escolhidas"></canvas>
+        <div>
+          <small>SEU BEM-CASADO</small>
+          <dl>
+            <div><dt>Papel</dt><dd id="sum-paper"></dd></div>
+            <div><dt>Fita</dt><dd id="sum-ribbon"></dd></div>
+            <div><dt>Acabamento</dt><dd id="sum-finish"></dd></div>
+          </dl>
+          <a class="text-link" href="#monte">Alterar cores ↑</a>
+        </div>
+      </div>
+
+      <fieldset class="row2" id="pedido">
+        <div><label for="qty">Quantidade</label><input id="qty" type="number" step="1" required><small>Mínimo de 20 unidades</small></div>
+        <div><label for="date">Data da retirada</label><input id="date" type="date" required><small>Mínimo de 72 h de antecedência</small></div>
+      </fieldset>
+      <div class="estimate" aria-live="polite">
+        <div><small>ESTIMATIVA</small><strong id="total">R$ 140,00</strong><span id="unit">R$ 7,00 / unidade</span></div>
+        <button class="button" type="submit">Consultar no WhatsApp <span>↗</span></button>
+      </div>
+      <p class="form-note">Você revisa a mensagem antes de enviar. O pedido só é confirmado pelo ateliê, mediante sinal de 50%.</p>
+    </form>
+  </section>
+
+  <div class="ribbon-strip">CASAMENTOS <span>✧</span> EVENTOS SOCIAIS <span>✧</span> PRESENTES CORPORATIVOS</div>
+
+<section id="bens" class="bens section">
+    <div class="section-heading">
+      <div><span class="eyebrow">BEM-CELEBRADOS</span><h2>Tradição em <em>cada encontro.</em></h2></div>
+      <div class="heading-text">
+        <p>O clássico que atravessa gerações, agora ressignificado para todos os seus começos.</p>
+        <p>Nossa linha de Bem-Celebrados é o símbolo máximo de gratidão: uma massa artesanal levíssima que envolve recheios premium em um abraço de sabor.</p>
+        <p>Do altar à maternidade, cada unidade é vestida com um design minucioso para se tornar a lembrança perfeita do seu ciclo, unindo o rigor do nosso processo autoral à emoção de compartilhar sua história.</p>
+      </div>
+    </div>
+    <div class="linhas" id="linhas"></div>
+
+
+    <div class="embalagens">
+      <div>
+        <span class="eyebrow">EMBALAGENS</span>
+        <h3>Uma extensão da <em>sua celebração.</em></h3>
+      </div>
+      <div>
+        <p>Cada embalagem é projetada como uma extensão da sua celebração, unindo o rigor técnico do nosso processo autoral à estética única do seu evento.</p>
+        <p>Como padrão de excelência, cada unidade é finalizada com papel crepom de alta gramatura e fitas de cetim em cores coordenadas à sua paleta.</p>
+        <p>Para projetos que buscam um nível superior de sofisticação, oferecemos a aplicação de pedrarias delicadas (+ R$ 0,30/un) ou o toque orgânico e atemporal das flores sempre-vivas (+ R$ 1,50/un).</p>
+        <p class="muted">Agora que você já conhece nossas opções de customização, que tal personalizar no estilo e nas cores do seu evento?</p>
+        <a class="button" href="#monte">Monte o seu bem-casado ↑</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-brand">
+    <img class="brand-symbol" src="assets/simbolo-vermelho.png" alt="">
+    <img class="brand-word" src="assets/renata-alves.png" alt="Renata Alves">
+    <span class="brand-sub">ATELIÊ DE DOCES</span>
+  </div>
+  <div>
+    <p>Encomendas com no mínimo 72h de antecedência.</p>
+    <p>Pedido mínimo: 20 unidades para a linha "Bens" e 40 unidades por sabor para Doces.</p>
+  </div>
+  <div>
+    <p>Atendimento: seg a sex, das 09h às 18h</p>
+    <p>Campina Grande – PB</p>
+    <p class="foot-links"><a href="https://wa.me/5583987185735" target="_blank" rel="noopener">WhatsApp ↗</a> <a href="https://www.instagram.com/renataalvesdoces/" target="_blank" rel="noopener">Instagram ↗</a> <a href="faq.html">Perguntas frequentes</a></p>
+  </div>
+  <small>© 2026 Renata Alves Ateliê de Doces · Créditos: Designer Alanne Dias</small>
+</footer>
+
+<script type="module" src="bens.js"></script>
+</body>
+</html>
