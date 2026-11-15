@@ -354,3 +354,19 @@ footer p{margin:0 0 4px}
 /* páginas separadas */
 .top nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
 main[class^="page-"]:not(.page-index) > section:first-child{padding-top:72px}
+
+/* rodapé organizado */
+footer{display:block;background:var(--paper);border-top:1px solid var(--line);padding:56px max(20px,4vw) 24px;color:var(--muted);font-size:14px}
+.foot-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;align-items:start;max-width:1240px;margin:0 auto}
+.foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-decoration:none}
+.foot-brand .brand-symbol{height:52px;width:auto;margin-left:-16px}
+.foot-brand .brand-word{height:28px;width:auto;margin-left:-6px}
+.foot-brand .brand-sub{margin-top:0}
+.foot-col{display:grid;gap:6px;align-content:start}
+.foot-col h4{margin:0 0 6px;font-family:var(--body);font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.foot-col p{margin:0;line-height:1.5}
+.foot-col a{color:var(--ink);text-decoration:none}
+.foot-col a:hover{color:var(--red);text-decoration:underline}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;max-width:1240px;margin:40px auto 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px}
+@media (max-width:860px){.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-brand{grid-column:1/-1}}
+@media (max-width:480px){.foot-top{grid-template-columns:1fr}}
