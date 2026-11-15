@@ -370,3 +370,9 @@ footer{display:block;background:var(--paper);border-top:1px solid var(--line);pa
 .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;max-width:1240px;margin:40px auto 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px}
 @media (max-width:860px){.foot-top{grid-template-columns:1fr 1fr;gap:28px}.foot-brand{grid-column:1/-1}}
 @media (max-width:480px){.foot-top{grid-template-columns:1fr}}
+
+/* doces: fundo limpo, só a sombra do doce (como foto de estúdio) */
+.product-img{background:#F2E8E4}
+.product-img.is-cut::before{content:"";position:absolute;left:50%;bottom:12.5%;width:52%;height:7%;transform:translateX(-46%);border-radius:50%;background:radial-gradient(closest-side,rgba(70,40,32,.42),rgba(70,40,32,.16) 55%,rgba(70,40,32,0));filter:blur(3px);z-index:0}
+.product-img.is-cut img{position:relative;z-index:1;filter:drop-shadow(12px 9px 9px rgba(70,40,32,.22))}
+.product:hover .product-img.is-cut img{transform:translateY(-4px)}
