@@ -482,3 +482,10 @@ img,canvas,svg{max-width:100%}
   .sabor-name{font-size:20px}
   .sabor-desc{font-size:12px}
 }
+
+/* trava o site na tela do celular: sem arrastar de lado e sem "quicar" ao rolar */
+html,body{overflow-x:clip;width:100%}
+html{overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overscroll-behavior:none;touch-action:pan-y pinch-zoom}
+.products,.sabores,.cart{touch-action:auto}
+input,select,textarea{font-size:16px}
