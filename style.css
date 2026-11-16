@@ -502,3 +502,18 @@ input,select,textarea{font-size:16px}
 /* mais espaço depois do botão "Continuar para o pedido" */
 .to-order{margin-bottom:28px}
 @media (max-width:980px){.center{padding-bottom:22px}.to-order{margin-bottom:0}.monte-grid{row-gap:36px}}
+
+/* celular: menu abre na lateral (gaveta à direita) */
+@media (max-width:1080px){
+  .top nav{display:flex!important;position:fixed;top:0;right:0;bottom:0;left:auto;width:min(72vw,300px);flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;
+    padding:calc(var(--header-h,72px) + 16px) 28px 28px;background:var(--deep);box-shadow:-18px 0 40px rgba(40,6,12,.35);
+    transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);z-index:-1;border:0}
+  body.menu-open .top nav{transform:none}
+  .top nav a{padding:14px 0;font-size:17px;width:100%;border-bottom:1px solid rgba(250,230,223,.14);text-align:left}
+  .top nav a[aria-current="page"]{text-decoration:none;color:#fff;font-weight:500}
+  .menu-btn{position:relative;z-index:2}
+  body.menu-open::after{content:"";position:fixed;inset:0;background:rgba(40,6,12,.35);z-index:19}
+  body.menu-open{overflow:hidden}
+}
+@media (prefers-reduced-motion:reduce){.top nav{transition:none}}
+@media (max-width:1080px){.top{backdrop-filter:none;-webkit-backdrop-filter:none}}
