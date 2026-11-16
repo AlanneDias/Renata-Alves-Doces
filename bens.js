@@ -62,7 +62,7 @@ $("#ribbons").addEventListener("click", e => {
 /* ---------- movimento ---------- */
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let moving = !reduce;
-const mt = $("#motion-toggle");
+const mt = $("#motion-toggle") || document.createElement("button");
 function syncMotion() { $("#stage").classList.toggle("paused", !moving); mt.textContent = moving ? "Pausar movimento" : "Movimentar"; mt.setAttribute("aria-pressed", String(!moving)); }
 mt.addEventListener("click", () => { moving = !moving; syncMotion(); });
 syncMotion();

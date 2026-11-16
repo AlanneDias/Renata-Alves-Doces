@@ -553,3 +553,20 @@ body.menu-open .menu-btn{color:#FAE6DF}
 .brand-top .brand-symbol,.top .brand-top .brand-symbol{height:44px}
 .top .header-cta{padding:6px 16px;font-size:13px}
 @media (max-width:1080px){.brand-top .brand-symbol,.top .brand-top .brand-symbol{height:38px}.menu-btn,.top .menu-btn{padding:4px}}
+
+/* menos espaços vazios entre as partes */
+.monte{padding-bottom:24px}
+.hero-foot{margin-top:24px}
+.order-wrap{padding-top:0;padding-bottom:24px}
+.order-wrap .order,.order{margin-top:16px;padding-top:28px;gap:22px}
+.bens.section{padding-top:40px;padding-bottom:48px}
+.bens{gap:28px}
+@media (max-width:760px){
+  .section{padding-top:40px;padding-bottom:40px}
+  .monte{padding-bottom:8px}
+  .hero-foot{margin-top:16px;gap:20px}
+  .order-wrap .order,.order{margin-top:8px;padding-top:20px}
+  .bens.section{padding-top:28px;padding-bottom:32px}
+  footer{padding-top:36px}
+}
+@media (max-width:760px){.embalagens{gap:10px}}
