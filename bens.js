@@ -21,8 +21,7 @@ createBemFoto($("#bem-canvas")).then(b => { bem = b; paint(); $("#stage").classL
 
 function paint() {
   if (bem) { bem.setPaper(state.paper.hex, state.paper.type); bem.setRibbon(state.ribbon.hex); bem.setFinish(FINISHES[state.finish].id); }
-  $("#code-main").textContent = `Papel ${state.paper.code} · Fita ${state.ribbon.code}`;
-  $("#code-names").textContent = `${state.paper.group} ${state.paper.name} · fita ${state.ribbon.code}.${state.ribbon.name}`;
+  $("#code-names").textContent = `Papel ${state.paper.group} ${state.paper.name} · Fita ${state.ribbon.name}`;
   // o que foi escolhido na simulação vai direto para o pedido
   $("#sum-paper").textContent = `${state.paper.code} · ${state.paper.group} ${state.paper.name}`;
   $("#sum-ribbon").textContent = `${state.ribbon.code} · ${state.ribbon.name}`;

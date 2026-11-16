@@ -326,7 +326,7 @@ footer p{margin:0 0 4px}
 
 /* celular: o bem-casado acompanha a rolagem enquanto a pessoa escolhe as cores */
 @media (max-width:980px){
-  .center{position:sticky;top:var(--header-h,72px);z-index:5;align-self:start;background:var(--hero-bg);padding-bottom:10px;box-shadow:0 12px 14px -12px rgba(90,18,32,.18)}
+  .center{position:sticky;top:var(--header-h,72px);z-index:5;align-self:start;background:var(--hero-bg);padding-bottom:10px}
   .center .codes small,.center .motion{display:none}
   .stage{max-width:min(58%,300px)}
   #code-main{font-size:14px}
@@ -440,3 +440,18 @@ body.cart-on{overflow:hidden}
 
 .hero-kicker{margin:6px 0 14px;text-align:center;font-size:clamp(11px,1.1vw,14px);letter-spacing:.5em;padding-left:.5em;color:var(--red);font-weight:500}
 @media (max-width:560px){.hero-kicker{letter-spacing:.38em;margin-bottom:8px}}
+
+/* cabeçalho escuro (vinho) */
+.top{background:var(--deep);border-bottom:0;color:#FAE6DF}
+body::before{background:var(--deep)}
+.top nav a,.top nav a:hover{color:#FAE6DF}
+.top nav a:hover{opacity:.8}
+.top .brand-symbol{filter:brightness(0) invert(92%) sepia(12%) saturate(500%) hue-rotate(320deg)}
+.top .header-cta{color:#FAE6DF;border-color:#FAE6DF}
+.top .header-cta:hover,.top .header-cta[aria-current="page"]{background:#FAE6DF;color:var(--deep);border-color:#FAE6DF}
+@media (max-width:1080px){.top nav{background:var(--deep);border-bottom:0}}
+/* menu hambúrguer sem círculo */
+.menu-btn,.top .menu-btn{border:0;border-radius:0;padding:8px 4px;color:#FAE6DF}
+.menu-btn span{width:22px}
+/* nome das cores sob o bem-casado */
+#code-names{font-size:14px;color:var(--red);letter-spacing:.04em}
