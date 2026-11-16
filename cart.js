@@ -37,9 +37,6 @@ const total = () => data.bens.reduce((s, b) => s + b.unit * b.qty, 0) + Object.e
 document.querySelector(".top-actions")?.insertAdjacentHTML("afterbegin",
   `<button type="button" class="cart-btn" id="cart-btn" aria-label="Abrir carrinho" aria-controls="cart">${BAG}<span class="cart-badge" id="cart-badge" hidden>0</span></button>`);
 document.body.insertAdjacentHTML("beforeend", `
-<div class="cart-bar" id="cart-bar" hidden>
-  <button type="button" class="cart-open" id="cart-open" aria-controls="cart">${BAG}<span id="cart-count"></span><strong id="cart-total-bar"></strong><span class="cart-cta">Conferir pedido</span></button>
-</div>
 <div class="cart-shade" id="cart-shade" hidden></div>
 <aside class="cart" id="cart" aria-label="Carrinho" hidden>
   <div class="cart-head"><h2>Seu carrinho</h2><button type="button" class="cart-close" id="cart-close" aria-label="Fechar carrinho">${X}</button></div>
@@ -66,9 +63,6 @@ function qtyHTML(kind, key, q, min) {
 function render() {
   const n = count();
   $("#cart-badge").hidden = !n; $("#cart-badge").textContent = n;
-  $("#cart-bar").hidden = !n || document.body.classList.contains("cart-on");
-  $("#cart-count").textContent = `${n} ${n === 1 ? "item" : "itens"}`;
-  $("#cart-total-bar").textContent = money(total());
   $("#cart-total").textContent = money(total());
   $("#cart-empty").hidden = !!n; $("#cart-form").hidden = !n;
   const bens = data.bens.map(b => `
@@ -107,7 +101,6 @@ document.addEventListener("click", e => {
 function openCart() { $("#cart").hidden = false; $("#cart-shade").hidden = false; document.body.classList.add("cart-on"); render(); }
 function closeCart() { $("#cart").hidden = true; $("#cart-shade").hidden = true; document.body.classList.remove("cart-on"); render(); }
 $("#cart-btn")?.addEventListener("click", openCart);
-$("#cart-open").addEventListener("click", openCart);
 $("#cart-close").addEventListener("click", closeCart);
 $("#cart-shade").addEventListener("click", closeCart);
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeCart(); });

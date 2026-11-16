@@ -724,3 +724,5 @@ body.zoom-on{overflow:hidden}
   .linha-text h3{font-size:26px}
 }
 @media (max-width:760px){.slide-btn{display:none}}
+
+.page-doces{padding-bottom:0}
