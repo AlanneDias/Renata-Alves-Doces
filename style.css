@@ -726,3 +726,38 @@ body.zoom-on{overflow:hidden}
 @media (max-width:760px){.slide-btn{display:none}}
 
 .page-doces{padding-bottom:0}
+
+/* ===== sem contornos em botões e seções ===== */
+/* seções e cabeçalho/rodapé */
+.top,.block-alt,.order-wrap,footer,.foot-bottom,.closing,.order,.section-heading,.intro-cols{border:0!important}
+.top{box-shadow:0 1px 0 rgba(139,26,43,.06)}
+/* cartões e caixas */
+.info-card,.faq-list details,.order-summary,.estimate,.embalagens,.sabor,.flavors button,.item,.product-img,.ci,.cart-list li,details{border:0!important}
+.item.in-cart .product-img,.item.in-cart.product-img{box-shadow:none!important}
+.item.in-cart .product-img{background:#F3DCD4}
+/* botões que eram só contorno viram preenchidos suaves */
+.add,.chip,.filters button,.header-cta,.top .header-cta,.button-ghost,.motion,.sw-finish,.monte .sw-finish{border:0!important}
+.add{background:#fff;color:var(--red)}
+.add:hover{background:var(--red);color:#FFF8F5}
+.filters button{background:#fff;color:var(--ink)}
+.filters button.active{background:var(--ink);color:var(--bg)}
+.top .header-cta{background:var(--red);color:#FFF8F5}
+.top .header-cta:hover,.top .header-cta[aria-current="page"]{background:var(--deep);color:#FFF8F5}
+/* sabores: selecionado com fundo vinho em vez de borda */
+.sabor{background:#fff;box-shadow:none!important}
+.sabor[aria-pressed="true"]{background:var(--red);box-shadow:none!important}
+.sabor[aria-pressed="true"] .sabor-name,.sabor[aria-pressed="true"] .sabor-desc,.sabor[aria-pressed="true"] .sabor-price,.sabor[aria-pressed="true"] .sabor-price small{color:#FFF8F5}
+/* acabamento: selecionado com fundo vinho */
+.monte .sw-finish{background:#fff;box-shadow:none!important}
+.monte .sw-finish[aria-pressed="true"]{background:var(--red);color:#FFF8F5;box-shadow:none!important}
+/* campos de formulário */
+input,select,textarea,.order-wrap input{border:0!important;background:#fff}
+/* catálogo no celular e carrinho: sem linhas divisórias, só espaço */
+@media (max-width:760px){.item{border-bottom:0!important;padding:8px 0}}
+.cart-list li.ci{border-bottom:0;padding:10px 0}
+.cart-head{border-bottom:0!important}
+.cart-sum{border-top:0!important}
+.hours th,.hours td{border-bottom:0!important;padding:6px 0}
+.price{border-top:0!important}
+.faq-cta-box{border:0}
+.order-wrap .hero-foot{border:0}
