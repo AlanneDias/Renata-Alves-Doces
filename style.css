@@ -723,7 +723,7 @@ body.zoom-on{overflow:hidden}
   .linha-text{padding:24px 20px 28px}
   .linha-text h3{font-size:26px}
 }
-@media (max-width:760px){.slide-btn{display:none}}
+
 
 .page-doces{padding-bottom:0}
 
@@ -761,3 +761,10 @@ input,select,textarea,.order-wrap input{border:0!important;background:#fff}
 .price{border-top:0!important}
 .faq-cta-box{border:0}
 .order-wrap .hero-foot{border:0}
+
+/* setas do slide visíveis também no celular */
+@media (max-width:760px){
+  .slide-btn{display:grid;width:38px;height:38px;background:rgba(255,248,245,.9);box-shadow:0 4px 12px rgba(40,6,12,.18)}
+  .slide-btn.prev{left:12px}.slide-btn.next{right:12px}
+  .slide-btn .ico{width:20px;height:20px}
+}
