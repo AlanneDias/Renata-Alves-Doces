@@ -906,3 +906,4 @@ body .foot-brand .brand-word{height:22px;width:auto;margin:0}
 body .foot-brand .brand-sub{margin:0;padding:0;letter-spacing:.3em}
 body .foot-bottom a{color:var(--red);text-decoration:none}
 body .foot-bottom a:hover{text-decoration:underline}
+@media (max-width:980px){.center-word{width:min(92%,380px)}.center-brand p{font-size:12px}}
