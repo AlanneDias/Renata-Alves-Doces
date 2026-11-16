@@ -516,3 +516,17 @@ input,select,textarea{font-size:16px}
 }
 @media (prefers-reduced-motion:reduce){.top nav{transition:none}}
 @media (max-width:1080px){.top{backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* cabeçalho na cor do fundo */
+.top{background:var(--bg);color:var(--red);border-bottom:1px solid var(--line)}
+body::before{background:var(--bg)}
+.top nav a,.top nav a:hover{color:var(--red)}
+.top .brand-symbol{filter:none}
+.top .header-cta{color:var(--red);border-color:var(--red)}
+.top .header-cta:hover,.top .header-cta[aria-current="page"]{background:var(--red);border-color:var(--red);color:#FFF8F5}
+.menu-btn,.top .menu-btn{color:var(--red)}
+body.menu-open .menu-btn{color:#FAE6DF}
+@media (max-width:1080px){
+  .top nav a,.top nav a:hover{color:#FAE6DF}
+  .top nav a[aria-current="page"]{color:#fff}
+}
