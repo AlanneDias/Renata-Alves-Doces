@@ -437,3 +437,6 @@ body.cart-on{overflow:hidden}
 
 
 
+
+.hero-kicker{margin:6px 0 14px;text-align:center;font-size:clamp(11px,1.1vw,14px);letter-spacing:.5em;padding-left:.5em;color:var(--red);font-weight:500}
+@media (max-width:560px){.hero-kicker{letter-spacing:.38em;margin-bottom:8px}}
