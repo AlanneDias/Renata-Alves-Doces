@@ -425,3 +425,12 @@ body.cart-on{overflow:hidden}
 /* Grupo VIP: botão no tom pêssego da cartela */
 .vip .button-light{background:var(--rose);color:#FFF8F5}
 .vip .button-light:hover{background:#FFF8F5;color:var(--deep)}
+
+/* menu enxuto */
+.top-actions{justify-self:end;display:flex;align-items:center;gap:10px}
+.top .header-cta{display:inline-flex;color:var(--hero-ink);border-color:var(--hero-ink)}
+.top .header-cta:hover,.top .header-cta[aria-current="page"]{background:var(--red);border-color:var(--red);color:#FFF8F5}
+.top nav{gap:6px 30px;font-size:14.5px}
+.nav-vip-mobile{display:none}
+@media (max-width:1080px){.top .header-cta{display:none}.nav-vip-mobile{display:block}}
+.page-faq #retiradas{padding-bottom:24px}
