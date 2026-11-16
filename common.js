@@ -1,3 +1,4 @@
+import "./cart.js";
 // comum a todas as páginas: menu do celular e altura do cabeçalho
 const $ = s => document.querySelector(s);
 /* ---------- menu (celular) ---------- */

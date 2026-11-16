@@ -582,3 +582,29 @@ body.menu-open .menu-btn{color:#FAE6DF}
 .slide-btn .ico{width:22px;height:22px}
 .cart-close .ico{width:24px;height:24px}
 .faq-cta a{display:inline-flex;align-items:center;gap:6px}
+
+/* ===== carrinho ===== */
+.cart-btn{position:relative;background:none;border:0;padding:6px;cursor:pointer;color:var(--red);display:grid;place-items:center}
+.cart-btn .ico{width:24px;height:24px}
+.cart-badge{position:absolute;top:0;right:-2px;min-width:18px;height:18px;border-radius:9px;background:var(--red);color:#FFF8F5;font-size:11px;display:grid;place-items:center;padding:0 5px;font-variant-numeric:tabular-nums}
+.cart-badge[hidden]{display:none}
+.top-actions{gap:14px}
+.cart-shade{position:fixed;inset:0;background:rgba(40,6,12,.35);z-index:39}
+.cart-shade[hidden],.cart[hidden],.cart-bar[hidden],.cart-form[hidden],.cart-empty[hidden]{display:none}
+.cart-open .ico{width:20px;height:20px}
+.cart-empty{color:var(--muted);font-size:14px;margin:20px 0}
+.ci{display:grid!important;grid-template-columns:64px 1fr auto;grid-template-areas:"img info total" "img qty del";gap:6px 12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.ci-img{grid-area:img;width:64px;height:64px;border-radius:10px;background:#F2E8E4;object-fit:contain;display:block}
+.ci-img.is-doce{padding:4px}
+.ci-info{grid-area:info;min-width:0;display:grid;gap:1px}
+.ci-info strong{font-weight:500;font-size:15px}
+.ci-info small{font-size:12px;color:var(--muted);line-height:1.35}
+.ci-total{grid-area:total;font-variant-numeric:tabular-nums;font-size:14px;align-self:start}
+.ci .qty{grid-area:qty;width:132px;padding:3px}
+.ci .qty button{width:28px;height:28px}
+.ci .qty button:disabled{opacity:.35;cursor:default}
+.ci .remove{grid-area:del;justify-self:end}
+.cart-list li.ci{grid-template-columns:64px minmax(0,1fr) auto;grid-template-areas:"img info total" "img qty del"}
+.cart-list li.ci .qty{grid-column:auto;grid-area:qty;width:132px}
+.cart-list li.ci .remove{grid-column:auto;grid-row:auto;grid-area:del}
+.cart-list li.ci .ci-img{grid-area:img}

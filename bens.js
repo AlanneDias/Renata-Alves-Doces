@@ -1,5 +1,6 @@
 import { PAPERS, RIBBONS, FLAVORS, FINISHES, LINHAS, WHATSAPP, MIN_QTY, MIN_DAYS } from "./data.js";
 import "./common.js";
+import { cart } from "./cart.js";
 import { createBemFoto } from "./bemfoto.js";
 
 const $ = s => document.querySelector(s);
@@ -97,9 +98,6 @@ $("#finishes").addEventListener("click", e => {
 $("#qty").min = MIN_QTY; $("#qty").value = MIN_QTY;
 $("#qty").addEventListener("input", update);
 
-const iso = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
-const minDate = new Date(); minDate.setDate(minDate.getDate() + MIN_DAYS);
-$("#date").min = iso(minDate);
 
 function unit() { return FLAVORS[state.flavor].price + FINISHES[state.finish].value + (state.paper.extra || 0); }
 function update() {
@@ -112,19 +110,17 @@ $("#config").addEventListener("submit", e => {
   e.preventDefault();
   if (!e.target.reportValidity()) return;
   const q = Number($("#qty").value);
-  const date = $("#date").value.split("-").reverse().join("/");
-  const lines = [
-    "Olá, Renata! Gostaria de consultar disponibilidade para esta seleção de bem-celebrados:",
-    "Sabor: " + FLAVORS[state.flavor].name,
-    "Papel: " + state.paper.code + " (" + state.paper.group + " " + state.paper.name + ")",
-    "Fita: " + state.ribbon.code + "." + state.ribbon.name,
-    "Acabamento: " + FINISHES[state.finish].label + (state.paper.extra ? "\nAdicional do papel " + state.paper.group + ": + " + money(state.paper.extra) + "/un." : ""),
-    "Quantidade: " + q,
-    "Retirada desejada: " + date,
-    "Estimativa: " + money(q * unit()) + " (" + money(unit()) + "/un.)",
-    "Podemos confirmar as cores, valores e disponibilidade?",
-  ];
-  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener,noreferrer");
+  const m = $("#mini-bem"), t = document.createElement("canvas"); t.width = t.height = 120;
+  try { t.getContext("2d").drawImage(m, 0, 0, 120, 120); } catch (err) {}
+  let thumb = ""; try { thumb = t.toDataURL("image/webp", 0.8); } catch (err) {}
+  cart.addBem({
+    flavor: FLAVORS[state.flavor].name,
+    paper: `${state.paper.group} ${state.paper.name}`, paperCode: state.paper.code,
+    ribbon: state.ribbon.name, ribbonCode: state.ribbon.code,
+    finish: FINISHES[state.finish].name + (state.paper.extra ? ` + papel ${state.paper.group}` : ""),
+    unit: unit(), qty: q, thumb,
+  });
+  cart.open();
 });
 
 /* ---------- bens ---------- */
