@@ -163,7 +163,8 @@ export const PRODUCTS = [
   "desc": "Intensidade, leveza e sofisticação em uma única mordida.",
   "price": 4.8,
   "cat": "Especiais",
-  "img": "https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQeXeIUJ7lCwmkKxl3AY42hneTnGoNO-tVmO5ZsSMGcZ_AA3Zpj1m4x8EowNMpAA8uLTWxao7XtZLXsm0ftRLVX9v3Fg5FV7Wh3WqXwKSYgrsDkDI2Z_N_O3M7yJWWpMRI_VwaY7NJJYeL6B6hUsvtHtqPI7U6SpAIjra_pzO8NukRjY8EcXzn7WUwx0nS92GMXixollGX_Su9d4VHc1t2S3_ilSAZBO3MwbmzU5=w900"
+  "img": "assets/doces/eclair-maracuja.webp",
+  "cut": "assets/doces/eclair-maracuja.webp"
  },
  {
   "name": "Frutas vermelhas",
@@ -200,14 +201,16 @@ export const PRODUCTS = [
   "desc": "Creme intenso de pistache com acabamento dourado. Exclusividade e requinte em cada mordida.",
   "price": 5.2,
   "cat": "Especiais",
-  "img": "https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQcX1TOLfSBht5vHXwN9cxscQoeSbvvx_lczF3iNSSpMPdfqp1NUlftTE1uaGb7foaOPC20VNUCxAw8SWixEA84LBNy4S_zkzT2CQ_45I7E37p7k2dJJ2Z7DOhn4KEk4BoYsKiboOmrVZbQBN_10ryXN8Ei28_0hTy1oyuosQ7W06enzn0XFN9hoPQIqj7eeVnzKKXJsmd63zYCOP71MrT0n-S9lKPGrJH2-PbNl=w900"
+  "img": "assets/doces/pistache-gold.webp",
+  "cut": "assets/doces/pistache-gold.webp"
  },
  {
   "name": "Mármore de Oreo",
   "desc": "Creme suave mesclado com pedaços crocantes de Oreo. Textura envolvente e sabor contemporâneo.",
   "price": 4.8,
   "cat": "Especiais",
-  "img": "https://lh7-us.googleusercontent.com/sitesv-images-rt/APXyLQcBYoR9RX2xlp4pOHBbgM--Yd9BmFC6lz9hBwEdzeB5VsvBPNTrfl7bQeo7-Sib7TgB-N7bQU2KpkoXyYZMcRDIh8T4jT6ELIU-zErSdtlcJBNKUbN0q9Ds8R_l3Ua_PAcEN_s7rmWVdy1iCaTAclgx6PCxTEitpnrU24iuFY_tbhvlT3IVXkGDrICUDIJqeu-x6bdGzKKPMrFzAbQAGgRTlsXa4qGuOXVx_S61=w900"
+  "img": "assets/doces/marmore-oreo.webp",
+  "cut": "assets/doces/marmore-oreo.webp"
  },
  {
   "name": "Cookies in Cream com brigadeiro",
