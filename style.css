@@ -455,3 +455,19 @@ body::before{background:var(--deep)}
 .menu-btn span{width:22px}
 /* nome das cores sob o bem-casado */
 #code-names{font-size:14px;color:var(--red);letter-spacing:.04em}
+
+/* celular: catálogo de doces em linhas horizontais (foto à esquerda, texto à direita) */
+@media (max-width:760px){
+  .catalog{grid-template-columns:1fr;gap:0}
+  .item{display:grid;grid-template-columns:92px 1fr auto;grid-template-areas:"img line line" "img desc desc" "img act act";column-gap:14px;row-gap:2px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+  .item .product-img{grid-area:img;width:92px;aspect-ratio:1;align-self:center}
+  .item .product-img.is-cut img{padding:6%}
+  .item .product-line{grid-area:line}
+  .item .product-line h3{font-size:15px}
+  .item p{grid-area:desc;-webkit-line-clamp:1;font-size:12px}
+  .item-action{grid-area:act;padding-top:6px;margin:0}
+  .item .add{width:auto;padding:6px 14px;display:inline-flex}
+  .item .qty{width:150px;padding:3px}
+  .item .qty button{width:28px;height:28px}
+  .item.in-cart .product-img{box-shadow:inset 0 0 0 2px var(--red)}
+}
