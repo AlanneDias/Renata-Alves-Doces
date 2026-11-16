@@ -608,3 +608,19 @@ body.menu-open .menu-btn{color:#FAE6DF}
 .cart-list li.ci .qty{grid-column:auto;grid-area:qty;width:132px}
 .cart-list li.ci .remove{grid-column:auto;grid-row:auto;grid-area:del}
 .cart-list li.ci .ci-img{grid-area:img}
+
+/* divisão entre personalização e pedido */
+.order-wrap{background:var(--paper);border-top:1px solid var(--line);margin-top:32px;padding:56px max(20px,4vw) 64px}
+.order-head{max-width:880px;margin:0 auto;display:grid;gap:8px;text-align:center}
+.order-head h2{font-size:clamp(32px,4vw,48px)}
+.order-wrap .hero-foot{max-width:880px;margin:28px auto 0;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.order-wrap .hero-price .from{color:var(--rose)}
+.order-wrap .hero-price .amount{color:var(--ink)}
+.order-wrap .hero-price .amount span{color:var(--muted)}
+.order-wrap .hero-info div{border-color:var(--line)}
+.order-wrap .hero-info dt{color:var(--ink)}
+.order-wrap .order,.order-wrap .order-wrap .order{border-top:0;margin-top:20px;padding-top:0}
+.order-wrap .sabor,.order-wrap .order-summary,.order-wrap .estimate,.order-wrap input{background:#fff}
+@media (max-width:760px){.order-wrap{margin-top:20px;padding-top:40px;padding-bottom:40px}.order-wrap .hero-foot{margin-top:20px;padding-bottom:20px}}
+@media (max-width:1080px){.top nav{box-shadow:none}body.menu-open .top nav{box-shadow:-18px 0 40px rgba(40,6,12,.35)}}
+@media (max-width:760px){.order-head{margin-bottom:4px}.order-wrap .hero-foot{margin-top:14px}}
