@@ -530,3 +530,19 @@ body.menu-open .menu-btn{color:#FAE6DF}
   .top nav a,.top nav a:hover{color:#FAE6DF}
   .top nav a[aria-current="page"]{color:#fff}
 }
+
+/* tipos de bens: slide com texto sobre a imagem */
+.linhas-wrap{position:relative}
+.linhas{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.linhas::-webkit-scrollbar{display:none}
+.linha{position:relative;flex:0 0 clamp(240px,28vw,340px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;scroll-snap-align:start;background:var(--deep);display:block}
+.linha img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.linha:hover img{transform:scale(1.04)}
+.linha::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(40,6,12,.82) 0%,rgba(40,6,12,.35) 38%,rgba(40,6,12,0) 62%)}
+.linha-text{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:22px;color:#FFF8F5;display:grid;gap:6px}
+.linha-text h3{font-size:30px;color:#FFF8F5;line-height:1}
+.linha-text p{font-size:14px;line-height:1.45;color:rgba(255,248,245,.88);margin:0}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#FFF8F5;color:var(--red);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 6px 16px rgba(90,18,32,.2);z-index:2}
+.slide-btn.prev{left:-14px}.slide-btn.next{right:-14px}
+.slide-btn:hover{background:var(--red);color:#FFF8F5}
+@media (max-width:760px){.linha{flex-basis:78%}.slide-btn{display:none}.linha-text h3{font-size:26px}}

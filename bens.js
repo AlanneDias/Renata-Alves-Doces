@@ -129,8 +129,15 @@ $("#config").addEventListener("submit", e => {
 
 /* ---------- bens ---------- */
 $("#linhas").innerHTML = LINHAS.map(l => `
-  <article class="linha"><div class="linha-img"><img loading="lazy" src="${l.img}" alt="${l.name}" onerror="this.remove()"></div>
-  <h3>${l.name}</h3><p>${l.desc}</p></article>`).join("");
+  <article class="linha">
+    <img loading="lazy" src="${l.img}" alt="" onerror="this.remove()">
+    <div class="linha-text"><h3>${l.name}</h3><p>${l.desc}</p></div>
+  </article>`).join("");
+(() => {
+  const t = $("#linhas"), step = () => t.querySelector(".linha").offsetWidth + 16;
+  document.querySelector(".slide-btn.prev").addEventListener("click", () => t.scrollBy({ left: -step(), behavior: "smooth" }));
+  document.querySelector(".slide-btn.next").addEventListener("click", () => t.scrollBy({ left: step(), behavior: "smooth" }));
+})();
 
 
 paint(); update();
