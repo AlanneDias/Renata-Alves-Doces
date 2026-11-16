@@ -3,7 +3,7 @@ import "./common.js";
 
 const $ = s => document.querySelector(s);
 const money = n => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-const MIN = 40, STEP = 10; // mínimo de 40 unidades por sabor
+const MIN = 20, STEP = 10; // mínimo de 20 unidades por sabor
 
 /* ---------- pedido (fica guardado neste navegador) ---------- */
 let cart = {};
