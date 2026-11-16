@@ -57,43 +57,7 @@ document.addEventListener("click", e => {
   if (t.dataset.add) change(t.dataset.add, MIN);
   else if (t.dataset.inc) change(t.dataset.inc, STEP);
   else if (t.dataset.dec) change(t.dataset.dec, -STEP);
-  else if (t.dataset.del) { delete cart[t.dataset.del]; save(); /* ---------- mesa de doces interativa ---------- */
-(() => {
-  const mesa = $("#mesa"), tip = $("#mesa-tip");
-  const cut = PRODUCTS.filter(p => p.cut);
-  const slots = [];
-  MESA_SPOTS.forEach((s, k) => {
-    const n = 3, scale = s.tray ? 0.92 : (s.cy < 45 ? 0.84 : 1);
-    for (let i = 0; i < n; i++) {
-      const off = (i - 1) * 0.58 * s.halfW;
-      slots.push({ x: s.cx + off, y: s.cy - (i === 1 ? 0.9 : 0), w: 6.4 * scale, z: k * 10 + (i === 1 ? 0 : 1) });
-    }
-  });
-  let active = null;
-  cut.slice(0, slots.length).forEach((p, i) => {
-    const sl = slots[i];
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "doce-pin"; b.dataset.name = p.name;
-    b.style.cssText = `left:${sl.x}%;top:${sl.y}%;width:${sl.w}%;z-index:${sl.z}`;
-    b.setAttribute("aria-label", `${p.name}, ${money(p.price)}`);
-    b.innerHTML = `<img src="${p.cut}" alt="" draggable="false">`;
-    b.addEventListener("click", () => show(b, p));
-    b.addEventListener("mouseenter", () => { if (matchMedia("(hover:hover)").matches) show(b, p); });
-    mesa.appendChild(b);
-  });
-  function show(b, p) {
-    if (active) active.classList.remove("on");
-    active = b; b.classList.add("on"); mesa.classList.add("focus");
-    $("#tip-name").textContent = p.name;
-    $("#tip-price").textContent = money(p.price) + " / un.";
-    $("#tip-add").textContent = cart[p.name] ? `No pedido · ${cart[p.name]} un. (+${STEP})` : `Adicionar ${MIN} un.`;
-    $("#tip-add").onclick = () => { change(p.name, cart[p.name] ? STEP : MIN); show(b, p); };
-    tip.style.left = b.style.left; tip.style.top = `calc(${b.style.top} + 2%)`; tip.hidden = false;
-  }
-  mesa.addEventListener("mouseleave", () => { if (active) active.classList.remove("on"); mesa.classList.remove("focus"); tip.hidden = true; active = null; });
-})();
-
-render(); renderCart(); }
+  else if (t.dataset.del) { delete cart[t.dataset.del]; save(); render(); renderCart(); }
 });
 
 document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("click", () => {
@@ -127,41 +91,5 @@ $("#cart-form").addEventListener("submit", e => {
   ];
   window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener,noreferrer");
 });
-
-/* ---------- mesa de doces interativa ---------- */
-(() => {
-  const mesa = $("#mesa"), tip = $("#mesa-tip");
-  const cut = PRODUCTS.filter(p => p.cut);
-  const slots = [];
-  MESA_SPOTS.forEach((s, k) => {
-    const n = 3, scale = s.tray ? 0.92 : (s.cy < 45 ? 0.84 : 1);
-    for (let i = 0; i < n; i++) {
-      const off = (i - 1) * 0.58 * s.halfW;
-      slots.push({ x: s.cx + off, y: s.cy - (i === 1 ? 0.9 : 0), w: 6.4 * scale, z: k * 10 + (i === 1 ? 0 : 1) });
-    }
-  });
-  let active = null;
-  cut.slice(0, slots.length).forEach((p, i) => {
-    const sl = slots[i];
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "doce-pin"; b.dataset.name = p.name;
-    b.style.cssText = `left:${sl.x}%;top:${sl.y}%;width:${sl.w}%;z-index:${sl.z}`;
-    b.setAttribute("aria-label", `${p.name}, ${money(p.price)}`);
-    b.innerHTML = `<img src="${p.cut}" alt="" draggable="false">`;
-    b.addEventListener("click", () => show(b, p));
-    b.addEventListener("mouseenter", () => { if (matchMedia("(hover:hover)").matches) show(b, p); });
-    mesa.appendChild(b);
-  });
-  function show(b, p) {
-    if (active) active.classList.remove("on");
-    active = b; b.classList.add("on"); mesa.classList.add("focus");
-    $("#tip-name").textContent = p.name;
-    $("#tip-price").textContent = money(p.price) + " / un.";
-    $("#tip-add").textContent = cart[p.name] ? `No pedido · ${cart[p.name]} un. (+${STEP})` : `Adicionar ${MIN} un.`;
-    $("#tip-add").onclick = () => { change(p.name, cart[p.name] ? STEP : MIN); show(b, p); };
-    tip.style.left = b.style.left; tip.style.top = `calc(${b.style.top} + 2%)`; tip.hidden = false;
-  }
-  mesa.addEventListener("mouseleave", () => { if (active) active.classList.remove("on"); mesa.classList.remove("focus"); tip.hidden = true; active = null; });
-})();
 
 render(); renderCart();
