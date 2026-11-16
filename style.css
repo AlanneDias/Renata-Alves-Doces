@@ -702,7 +702,7 @@ body.zoom-on{overflow:hidden}
 .zoom-close .ico{width:22px;height:22px}
 .zoom-stage{position:relative;width:min(70vh,86vw,560px);aspect-ratio:1;align-self:center;display:grid;place-items:center}
 .zoom-stage img{width:100%;height:100%;object-fit:contain;transform:scale(.6);transition:transform .45s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(10px 12px 14px rgba(70,40,32,.18))}
-.zoom.open .zoom-stage img{transform:scale(1);animation:spin 14s linear .45s infinite}
+.zoom.open .zoom-stage img{transform:scale(1)}
 .zoom.open .zoom-stage img.is-photo{animation:none;border-radius:16px;object-fit:cover}
 .zoom-shadow{position:absolute;left:50%;bottom:12%;width:46%;height:6%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(70,40,32,.35),rgba(70,40,32,0))}
 @keyframes spin{to{transform:scale(1) rotate(360deg)}}
