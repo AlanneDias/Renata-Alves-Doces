@@ -714,3 +714,13 @@ body.zoom-on{overflow:hidden}
 .zoom-line .add{width:auto;padding:10px 18px}
 .zoom-line .qty{width:160px}
 @media (prefers-reduced-motion:reduce){.zoom.open .zoom-stage img{animation:none}}
+
+/* celular: slide de bens de ponta a ponta */
+@media (max-width:760px){
+  .linhas-wrap{margin-inline:-20px}
+  .linhas{gap:0}
+  .linha{flex-basis:100%;border-radius:0;aspect-ratio:4/5}
+  .linha-text{padding:24px 20px 28px}
+  .linha-text h3{font-size:26px}
+}
+@media (max-width:760px){.slide-btn{display:none}}

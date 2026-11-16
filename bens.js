@@ -133,6 +133,17 @@ $("#linhas").innerHTML = LINHAS.map(l => `
   const t = $("#linhas"), step = () => t.querySelector(".linha").offsetWidth + 16;
   document.querySelector(".slide-btn.prev").addEventListener("click", () => t.scrollBy({ left: -step(), behavior: "smooth" }));
   document.querySelector(".slide-btn.next").addEventListener("click", () => t.scrollBy({ left: step(), behavior: "smooth" }));
+  // passa sozinho; pausa enquanto a pessoa toca ou passa o mouse
+  let paused = false, timer;
+  const next = () => {
+    if (paused || document.hidden) return;
+    const end = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
+    t.scrollTo({ left: end ? 0 : t.scrollLeft + step(), behavior: "smooth" });
+  };
+  const start = () => { clearInterval(timer); if (!matchMedia("(prefers-reduced-motion: reduce)").matches) timer = setInterval(next, 3500); };
+  ["pointerenter", "touchstart", "focusin"].forEach(ev => t.addEventListener(ev, () => { paused = true; }, { passive: true }));
+  ["pointerleave", "touchend", "focusout"].forEach(ev => t.addEventListener(ev, () => { paused = false; start(); }, { passive: true }));
+  start();
 })();
 
 
