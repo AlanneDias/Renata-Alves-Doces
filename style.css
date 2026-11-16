@@ -546,3 +546,4 @@ body.menu-open .menu-btn{color:#FAE6DF}
 .slide-btn.prev{left:-14px}.slide-btn.next{right:-14px}
 .slide-btn:hover{background:var(--red);color:#FFF8F5}
 @media (max-width:760px){.linha{flex-basis:78%}.slide-btn{display:none}.linha-text h3{font-size:26px}}
+.bens > *,.linhas-wrap{min-width:0}
