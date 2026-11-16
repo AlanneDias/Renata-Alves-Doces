@@ -570,3 +570,15 @@ body.menu-open .menu-btn{color:#FAE6DF}
   footer{padding-top:36px}
 }
 @media (max-width:760px){.embalagens{gap:10px}}
+
+/* ícones (sem emojis) */
+.ico{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+.button .ico,.cart-form .button .ico{width:20px;height:20px}
+.social{display:flex;gap:12px;margin:2px 0 4px}
+.social a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#FFF8F5;text-decoration:none}
+.social a:hover{background:var(--deep);text-decoration:none}
+.social .ico{width:20px;height:20px}
+.slide-btn{display:grid;place-items:center}
+.slide-btn .ico{width:22px;height:22px}
+.cart-close .ico{width:24px;height:24px}
+.faq-cta a{display:inline-flex;align-items:center;gap:6px}
