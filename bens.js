@@ -24,6 +24,7 @@ function paint() {
   if (bem) { bem.setPaper(state.paper.hex, state.paper.type); bem.setRibbon(state.ribbon.hex); bem.setFinish(FINISHES[state.finish].id); }
   $("#code-names").textContent = `Papel ${state.paper.group} ${state.paper.name} · Fita ${state.ribbon.name}`;
   // o que foi escolhido na simulação vai direto para o pedido
+  $("#sum-flavor").textContent = FLAVORS[state.flavor].name;
   $("#sum-paper").textContent = `${state.paper.code} · ${state.paper.group} ${state.paper.name}`;
   $("#sum-ribbon").textContent = `${state.ribbon.code} · ${state.ribbon.name}`;
   const f = FINISHES[state.finish];
@@ -77,7 +78,7 @@ $("#flavors").addEventListener("click", e => {
   const b = e.target.closest("[data-i]"); if (!b) return;
   state.flavor = +b.dataset.i;
   $("#flavors").querySelectorAll("button").forEach(x => { x.setAttribute("aria-pressed", x === b); x.setAttribute("aria-checked", x === b); });
-  update();
+  paint(); update();
 });
 // acabamento no mesmo padrão das bolinhas de cor
 const FIN_ICON = {
