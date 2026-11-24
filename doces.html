@@ -3,8 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Doces Finos — Renata Alves</title>
-<meta name="description" content="Onde a sofisticação encontra o sabor artesanal. Doces finos e bem-celebrados sob encomenda em Campina Grande – PB.">
+<title>Doces finos para festas em Campina Grande | Renata Alves</title>
+<meta name="description" content="Encomende doces finos para festas e casamentos em Campina Grande, PB. Escolha sabores, monte o pedido no carrinho e combine a retirada pelo WhatsApp.">
+<link rel="canonical" href="https://www.renataalvesdoces.com.br/doces.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Renata Alves Ateliê de Doces">
+<meta property="og:title" content="Doces finos para festas em Campina Grande | Renata Alves">
+<meta property="og:description" content="Encomende doces finos para festas e casamentos em Campina Grande, PB. Escolha sabores, monte o pedido no carrinho e combine a retirada pelo WhatsApp.">
+<meta property="og:url" content="https://www.renataalvesdoces.com.br/doces.html">
+<meta property="og:image" content="https://www.renataalvesdoces.com.br/assets/fotos/docesfinos-1.jpg">
+<meta property="og:image:alt" content="Brigadeiro artesanal do ateliê Renata Alves">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -12,6 +21,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<style>
+  #doces .section-heading h1 {
+    margin: 0;
+    font: 400 clamp(30px, 4vw, 44px)/1.08 var(--display);
+    color: var(--ink);
+    letter-spacing: 0;
+  }
+  .catalog-note a { text-decoration: underline; }
+</style>
 </head>
 <body>
 <header class="top">
@@ -32,8 +50,11 @@
 <main class="page-doces">
 <section class="collection section" id="doces">
     <div class="section-heading">
-      <div><span class="eyebrow">DOCES FINOS &amp; GOURMET</span><h2>Alta confeitaria &amp; <em>curadoria de sabores.</em></h2></div>
-      <div class="heading-text"><p>Pequenas joias esculpidas à mão, com ingredientes nobres como pistache puro e chocolates de origem.</p></div>
+      <div><span class="eyebrow">DOCES FINOS &amp; GOURMET</span><h1>Doces finos para festas em <em>Campina Grande.</em></h1></div>
+      <div class="heading-text">
+        <p>Encomende doces para casamentos, aniversários e outras festas. Escolha entre brigadeiros, camafeus de nozes, doces de pistache e outros sabores artesanais.</p>
+        <p>Escolha os sabores abaixo e confira os valores no carrinho antes de enviar o pedido pelo WhatsApp.</p>
+      </div>
     </div>
     <div class="filters" role="group" aria-label="Filtrar doces">
       <button class="active" aria-pressed="true" data-filter="Todos">Todos os sabores</button>
@@ -41,7 +62,12 @@
       <button aria-pressed="false" data-filter="Especiais">Especiais</button>
     </div>
     <div id="products" class="catalog"></div>
-    <p class="catalog-note">Mínimo de 20 unidades por sabor.</p>
+    <noscript><p>Para encomendar, <a href="https://wa.me/5583987185735">consulte sabores e disponibilidade pelo WhatsApp</a>.</p></noscript>
+    <p class="catalog-note">Mínimo de 20 unidades por sabor. Encomendas com pelo menos 72 horas de antecedência, conforme disponibilidade. <a href="faq.html" class="muted">Veja como retirar no ateliê no Catolé</a>.</p>
+    <div class="faq-cta-box">
+      <p>Para lembrancinhas de casamento, escolha o sabor e as cores dos bem-casados.</p>
+      <a class="button" href="./#monte">Personalizar bem-casados</a>
+    </div>
   </section>
 </main>
 
